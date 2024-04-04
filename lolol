@@ -1,0 +1,5 @@
+fnn (Var x) = Var x
+fnn (Neg (Conj f1 f2)) = Disy (fnn (Neg f1)) (fnn (Neg f2))
+fnn (Neg (Disy f1 f2)) = Conj (fnn (Neg f1)) (fnn (Neg f2))
+fnn (Conj f1 f2) = Conj (fnn f1) (fnn f2)
+fnn (Disy f1 f2) = Disy (fnn f1) (fnn f2)
